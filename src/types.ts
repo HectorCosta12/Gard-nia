@@ -1,0 +1,20 @@
+export interface Product {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  description: string;
+  careInstructions: {
+    light: string;
+    water: string;
+    humidity: string;
+  };
+  image: string;
+  isRare?: boolean;
+}
+
+export interface Testimonial {
+  id: string;
+  author: string;
+  text: string;
+}

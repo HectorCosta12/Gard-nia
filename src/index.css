@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+
+  --color-gardenia-green: #0F2A1D;
+  --color-gardenia-ivory: #F7F5F0;
+  --color-gardenia-gold: #C8A96A;
+  --color-gardenia-brown: #6B4F3A;
+  --color-panel-bg: #E6E2D8;
+}
+
+@layer base {
+  body {
+    @apply bg-gardenia-ivory text-gardenia-green font-sans antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-normal;
+  }
+}
+
+@layer components {
+  .luxury-button-primary {
+    @apply bg-gardenia-green text-gardenia-ivory px-9 py-4.5 text-[11px] font-semibold uppercase tracking-[0.1em] hover:bg-gardenia-brown transition-colors duration-300;
+  }
+
+  .luxury-button-secondary {
+    @apply bg-transparent border border-gardenia-green text-gardenia-green px-9 py-4.5 text-[11px] font-semibold uppercase tracking-[0.1em] hover:bg-gardenia-green hover:text-gardenia-ivory transition-all duration-300;
+  }
+
+  .arched-panel {
+    @apply bg-panel-bg rounded-t-[200px] relative overflow-hidden flex items-end justify-center;
+  }
+
+  .side-rail-text {
+    @apply [writing-mode:vertical-rl] [transform:rotate(180deg)] font-serif uppercase tracking-[0.3em] text-[14px] text-gardenia-gold;
+  }
+}
+
+.luxury-text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hover-lift {
+  @apply transition-transform duration-500 ease-out hover:-translate-y-2;
+}
+
+.quote-mark::before {
+  content: '“';
+  @apply absolute -left-5 -top-3 text-[40px] text-gardenia-gold leading-none;
+}
